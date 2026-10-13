@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Assignment explaining real-world applications of arrays and a Python Student Marks Management System.">
+  <title>Real-World Applications of Arrays</title>
+  <style>
+    :root { --navy:#183153; --blue:#24527a; --light:#f3f6fa; --ink:#263238; --muted:#5c6875; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Arial, Helvetica, sans-serif; color:var(--ink); line-height:1.65; background:#fff; }
+    header { background:linear-gradient(135deg,#183153,#24527a); color:white; padding:3.5rem 1.2rem; text-align:center; }
+    header h1 { max-width:900px; margin:0 auto .8rem; font-size:clamp(2rem,5vw,3rem); line-height:1.15; }
+    header p { margin:0 auto; max-width:720px; color:#e8eef7; }
+    nav { background:#10243d; padding:.8rem 1rem; position:sticky; top:0; z-index:10; }
+    nav .links { max-width:1000px; margin:auto; display:flex; flex-wrap:wrap; gap:.6rem 1.1rem; justify-content:center; }
+    nav a { color:white; text-decoration:none; font-size:.93rem; }
+    nav a:hover { text-decoration:underline; }
+    main { max-width:1000px; margin:auto; padding:1.5rem 1.2rem 3rem; }
+    section { padding:1rem 0 1.6rem; scroll-margin-top:6rem; }
+    h2 { color:var(--navy); border-bottom:2px solid #dce5ef; padding-bottom:.4rem; }
+    h3 { color:var(--blue); margin-bottom:.35rem; }
+    .card-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; }
+    .card { border:1px solid #dce3eb; border-radius:12px; padding:1rem; background:white; box-shadow:0 3px 12px #1831530a; }
+    .callout { background:var(--light); border-left:4px solid var(--blue); padding:1rem; border-radius:6px; }
+    code { background:#eef2f7; padding:.12rem .3rem; border-radius:4px; }
+    pre { background:#101b2a; color:#e9f0f8; padding:1rem; border-radius:10px; overflow:auto; font-size:.88rem; line-height:1.5; }
+    .table-wrap { overflow-x:auto; }
+    table { width:100%; border-collapse:collapse; margin:1rem 0; }
+    th,td { border:1px solid #d6dee8; padding:.7rem; text-align:left; vertical-align:top; }
+    th { background:var(--navy); color:white; }
+    tr:nth-child(even) td { background:#f7f9fc; }
+    .download { display:inline-block; background:var(--blue); color:white; padding:.7rem 1rem; border-radius:7px; text-decoration:none; font-weight:bold; }
+    .download:hover { background:var(--navy); }
+    footer { text-align:center; background:var(--light); color:var(--muted); padding:1.5rem; font-size:.9rem; }
+    @media print { nav, .download { display:none; } header { background:white; color:black; padding:1rem; } header p { color:black; } body { font-size:11pt; } }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Real-World Applications of Arrays</h1>
+  <p>A data structures assignment with a Python Student Marks Management System</p>
+</header>
+<nav aria-label="Main navigation">
+  <div class="links">
+    <a href="#introduction">Introduction</a>
+    <a href="#applications">Applications</a>
+    <a href="#importance">Why Arrays?</a>
+    <a href="#project">Python Project</a>
+    <a href="#code">Source Code</a>
+    <a href="#conclusion">Conclusion</a>
+  </div>
+</nav>
+<main>
+  <section id="introduction">
+    <h2>1. Introduction</h2>
+    <p>An <strong>array</strong> is a data structure used to store multiple values under one variable name. Each value occupies a position called an <em>index</em>, allowing a program to access and manipulate individual elements. Traditional arrays in many programming languages store elements of the same data type. Python lists, used in this project, are more flexible.</p>
+    <p>For example:</p>
+    <pre><code>marks = [75, 80, 65, 90, 85]</code></pre>
+    <p>The <code>marks</code> list stores five values. In Python, indexing starts at <code>0</code>, so <code>marks[0]</code> is <code>75</code>.</p>
+  </section>
+
+  <section id="applications">
+    <h2>2. Real-World Applications That Use Arrays</h2>
+    <div class="card-grid">
+      <article class="card"><h3>Student Management Systems</h3><p>Arrays store students' marks, attendance records, and identification numbers. They help calculate averages, find the highest score, and process many student records.</p></article>
+      <article class="card"><h3>Supermarket and Inventory Systems</h3><p>Arrays can store product prices, quantities, and stock codes. Programs can search for items, update quantities, and calculate stock value.</p></article>
+      <article class="card"><h3>Hospital Management Systems</h3><p>Arrays can organize patient waiting lists, appointment times, and sets of vital-sign measurements. Real hospital systems also use databases and other data structures.</p></article>
+      <article class="card"><h3>Weather Forecasting Systems</h3><p>Arrays store temperature, rainfall, and humidity readings over time. Programs can calculate averages, identify trends, and compare weather conditions.</p></article>
+      <article class="card"><h3>Video Games</h3><p>Arrays store player scores, game-board positions, health values, and coordinates. They help games manage multiple objects and update their states.</p></article>
+      <article class="card"><h3>Banking Systems</h3><p>Arrays can hold transaction amounts for calculations, daily summaries, and reports. Production banking systems also rely on databases and other structures for secure, persistent records.</p></article>
+    </div>
+  </section>
+
+  <section id="importance">
+    <h2>3. Why Arrays Are Necessary</h2>
+    <ol>
+      <li><strong>Organizing data:</strong> Store many related values under one variable name.</li>
+      <li><strong>Easy access:</strong> Access individual elements using their indexes.</li>
+      <li><strong>Efficient processing:</strong> Use loops to process many values without repeating statements.</li>
+      <li><strong>Easy calculations:</strong> Calculate totals, averages, minimums, and maximums.</li>
+      <li><strong>Reduced repetition:</strong> Use one structure instead of creating many separate variables.</li>
+      <li><strong>Updating data:</strong> Change stored elements when information changes.</li>
+    </ol>
+    <div class="callout"><strong>Limitation:</strong> Traditional fixed-size arrays have a fixed capacity, and some languages require all elements to have the same type. Python lists can grow and shrink dynamically.</div>
+  </section>
+
+  <section id="project">
+    <h2>4. Application Developed: Student Marks Management System</h2>
+    <p>The selected application is a <strong>Student Marks Management System</strong>. Schools need to record student marks, calculate average scores, and identify the student with the highest mark.</p>
+    <h3>Objectives</h3>
+    <ul>
+      <li>Store students' names and marks using Python lists.</li>
+      <li>Display all student records.</li>
+      <li>Calculate the average mark.</li>
+      <li>Identify the student with the highest mark.</li>
+      <li>Allow users to add student records.</li>
+    </ul>
+    <p><a class="download" href="student_marks.py" download>Download Python source code</a></p>
+  </section>
+
+  <section id="code">
+    <h2>5. Python Source Code</h2>
+    <p>This program can be run in Visual Studio Code with Python installed. The two lists use matching indexes so that each student's name stays associated with their mark.</p>
+    <pre><code># STUDENT MARKS MANAGEMENT SYSTEM
+# Arrays are represented by Python lists.
+
+student_names = []
+student_marks = []
+
+
+def add_student():
+    name = input("Enter student name: ").strip()
+
+    if not name:
+        print("Name cannot be empty.")
+        return
+
+    try:
+        mark = float(input("Enter student's mark (0-100): "))
+
+        if mark &lt; 0 or mark &gt; 100:
+            print("Mark must be between 0 and 100.")
+            return
+
+        student_names.append(name)
+        student_marks.append(mark)
+        print("Student added successfully!")
+
+    except ValueError:
+        print("Please enter a valid number.")
+
+
+def display_students():
+    if not student_names:
+        print("No student records available.")
+        return
+
+    print("\\n--- STUDENT RECORDS ---")
+    for i in range(len(student_names)):
+        print(
+            f"{i + 1}. {student_names[i]} "
+            f"- {student_marks[i]}/100"
+        )
+
+
+def calculate_average():
+    if not student_marks:
+        print("No marks available.")
+        return
+
+    average = sum(student_marks) / len(student_marks)
+    print(f"Average mark: {average:.2f}")
+
+
+def find_top_student():
+    if not student_marks:
+        print("No marks available.")
+        return
+
+    highest_index = student_marks.index(max(student_marks))
+    print("Top student:", student_names[highest_index])
+    print("Highest mark:", student_marks[highest_index])
+
+
+while True:
+    print("\\n===== STUDENT MANAGEMENT SYSTEM =====")
+    print("1. Add student")
+    print("2. Display students")
+    print("3. Calculate average mark")
+    print("4. Find top student")
+    print("5. Exit")
+
+    choice = input("Choose an option: ")
+
+    if choice == "1":
+        add_student()
+    elif choice == "2":
+        display_students()
+    elif choice == "3":
+        calculate_average()
+    elif choice == "4":
+        find_top_student()
+    elif choice == "5":
+        print("Thank you for using the system!")
+        break
+    else:
+        print("Invalid choice. Please try again.")</code></pre>
+  </section>
+
+  <section id="array-operations">
+    <h2>6. How the Program Uses Arrays</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Array operation</th><th>Purpose in the program</th></tr></thead>
+        <tbody>
+          <tr><td><code>student_names = []</code></td><td>Creates an empty list for student names.</td></tr>
+          <tr><td><code>student_marks = []</code></td><td>Creates an empty list for marks.</td></tr>
+          <tr><td><code>append()</code></td><td>Adds a new name or mark to a list.</td></tr>
+          <tr><td><code>len()</code></td><td>Counts the number of student records.</td></tr>
+          <tr><td><code>sum()</code></td><td>Adds all marks together.</td></tr>
+          <tr><td><code>max()</code></td><td>Finds the highest mark.</td></tr>
+          <tr><td><code>index()</code></td><td>Finds the position of the highest mark.</td></tr>
+          <tr><td><code>for</code> loop</td><td>Displays each student's record.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>For example, <code>student_names[0]</code> and <code>student_marks[0]</code> refer to the first student's name and mark.</p>
+  </section>
+
+  <section id="output">
+    <h2>7. Sample Output</h2>
+    <pre><code>===== STUDENT MANAGEMENT SYSTEM =====
+1. Add student
+2. Display students
+3. Calculate average mark
+4. Find top student
+5. Exit
+
+--- STUDENT RECORDS ---
+1. Ama - 75.0/100
+2. Kofi - 80.0/100
+3. Abena - 90.0/100
+
+Average mark: 81.67
+Top student: Abena
+Highest mark: 90.0</code></pre>
+    <p><em>This is illustrative output, assuming the three students have already been entered.</em></p>
+  </section>
+
+  <section id="conclusion">
+    <h2>8. Conclusion</h2>
+    <p>Arrays are important in software development because they provide an organized way to store, access, and process related data. They are used in education, healthcare, banking, inventory management, weather forecasting, and video games.</p>
+    <p>The Student Marks Management System demonstrates how arrays simplify the storage of student information, calculation of average marks, and identification of the highest-performing student. Without arrays, the program would require more individual variables and repetitive code, making it harder to maintain as the number of students increases.</p>
+  </section>
+</main>
+<footer>Arrays Assignment · Student Marks Management System · Built with HTML and Python</footer>
+</body>
+</html>
